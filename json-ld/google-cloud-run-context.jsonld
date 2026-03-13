@@ -1,0 +1,46 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gcloud": "https://cloud.google.com/run/docs/reference/rest/v2/projects.locations.services#",
+    "Service": "gcloud:Service",
+    "Revision": "gcloud:Revision",
+    "Job": "gcloud:Job",
+    "name": "schema:name",
+    "description": "schema:description",
+    "uid": "schema:identifier",
+    "uri": "schema:url",
+    "createTime": "schema:dateCreated",
+    "updateTime": "schema:dateModified",
+    "deleteTime": "schema:expires",
+    "labels": "schema:keywords",
+    "annotations": "schema:additionalProperty",
+    "ingress": "schema:accessMode",
+    "launchStage": "schema:creativeWorkStatus",
+    "creator": "schema:creator",
+    "lastModifier": "schema:editor",
+    "latestReadyRevision": "schema:version",
+    "template": {
+      "@id": "schema:SoftwareApplication",
+      "@context": {
+        "serviceAccount": "schema:email",
+        "timeout": "schema:duration",
+        "containers": {
+          "@id": "schema:SoftwareApplication",
+          "@context": {
+            "image": "schema:url",
+            "name": "schema:name",
+            "command": "schema:executableLibraryName"
+          }
+        }
+      }
+    },
+    "traffic": {
+      "@id": "schema:DataFeed",
+      "@context": {
+        "revision": "schema:version",
+        "percent": "schema:value",
+        "tag": "schema:name"
+      }
+    }
+  }
+}

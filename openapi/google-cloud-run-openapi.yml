@@ -1,0 +1,973 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud Run Admin API
+  description: >-
+    The Cloud Run Admin API deploys and manages user-provided container images
+    as serverless services. It supports creating, updating, and deleting services,
+    managing revisions and traffic splitting, executing jobs, and configuring
+    domain mappings.
+  version: v2
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/run
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+externalDocs:
+  description: Google Cloud Run Documentation
+  url: https://cloud.google.com/run/docs/reference/rest
+servers:
+- url: https://run.googleapis.com/v2
+  description: Google Cloud Run Admin API v2
+security:
+- oauth2: []
+tags:
+- name: Services
+  description: Operations for managing Cloud Run services
+- name: Revisions
+  description: Operations for managing service revisions
+- name: Jobs
+  description: Operations for managing Cloud Run jobs
+- name: Executions
+  description: Operations for managing job executions
+- name: Tasks
+  description: Operations for managing execution tasks
+- name: Operations
+  description: Long-running operation management
+paths:
+  /projects/{projectId}/locations/{location}/services:
+    get:
+      operationId: listServices
+      summary: List services
+      description: Lists services in the given project and location.
+      tags:
+      - Services
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: showDeleted
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListServicesResponse'
+    post:
+      operationId: createService
+      summary: Create a service
+      description: Creates a new service in the given project and location.
+      tags:
+      - Services
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/services/{serviceId}:
+    get:
+      operationId: getService
+      summary: Get a service
+      description: Gets information about a service.
+      tags:
+      - Services
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Service'
+    patch:
+      operationId: updateService
+      summary: Update a service
+      description: Updates a service.
+      tags:
+      - Services
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: updateMask
+        in: query
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Service'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteService
+      summary: Delete a service
+      description: Deletes a service.
+      tags:
+      - Services
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/services/{serviceId}/revisions:
+    get:
+      operationId: listRevisions
+      summary: List revisions
+      description: Lists revisions for a given service in the given project and location.
+      tags:
+      - Revisions
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: showDeleted
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListRevisionsResponse'
+  /projects/{projectId}/locations/{location}/services/{serviceId}/revisions/{revisionId}:
+    get:
+      operationId: getRevision
+      summary: Get a revision
+      description: Gets information about a revision.
+      tags:
+      - Revisions
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Revision'
+    delete:
+      operationId: deleteRevision
+      summary: Delete a revision
+      description: Deletes a revision.
+      tags:
+      - Revisions
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: serviceId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: revisionId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/jobs:
+    get:
+      operationId: listJobs
+      summary: List jobs
+      description: Lists jobs in the given project and location.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pageSize
+        in: query
+        schema:
+          type: integer
+      - name: pageToken
+        in: query
+        schema:
+          type: string
+      - name: showDeleted
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListJobsResponse'
+    post:
+      operationId: createJob
+      summary: Create a job
+      description: Creates a new job in the given project and location.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/jobs/{jobId}:
+    get:
+      operationId: getJob
+      summary: Get a job
+      description: Gets information about a job.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+    patch:
+      operationId: updateJob
+      summary: Update a job
+      description: Updates a job.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Job'
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteJob
+      summary: Delete a job
+      description: Deletes a job.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /projects/{projectId}/locations/{location}/jobs/{jobId}:run:
+    post:
+      operationId: runJob
+      summary: Run a job
+      description: Triggers creation of a new execution of this job.
+      tags:
+      - Jobs
+      parameters:
+      - name: projectId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: location
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                overrides:
+                  type: object
+                  properties:
+                    containerOverrides:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                          args:
+                            type: array
+                            items:
+                              type: string
+                          env:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                name:
+                                  type: string
+                                value:
+                                  type: string
+                    taskCount:
+                      type: integer
+                    timeout:
+                      type: string
+      responses:
+        '200':
+          description: Successful response with long-running operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+            https://www.googleapis.com/auth/run: View and manage Cloud Run services
+  schemas:
+    Service:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The fully qualified name of the service.
+        description:
+          type: string
+        uid:
+          type: string
+          description: Output only. Server-assigned unique identifier.
+        generation:
+          type: string
+          description: Output only. A number that monotonically increases every time the user modifies the service.
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        deleteTime:
+          type: string
+          format: date-time
+        expireTime:
+          type: string
+          format: date-time
+        creator:
+          type: string
+        lastModifier:
+          type: string
+        ingress:
+          type: string
+          enum:
+          - INGRESS_TRAFFIC_UNSPECIFIED
+          - INGRESS_TRAFFIC_ALL
+          - INGRESS_TRAFFIC_INTERNAL_ONLY
+          - INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER
+        launchStage:
+          type: string
+          enum:
+          - LAUNCH_STAGE_UNSPECIFIED
+          - UNIMPLEMENTED
+          - PRELAUNCH
+          - EARLY_ACCESS
+          - ALPHA
+          - BETA
+          - GA
+          - DEPRECATED
+        template:
+          $ref: '#/components/schemas/RevisionTemplate'
+        traffic:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION
+              revision:
+                type: string
+              percent:
+                type: integer
+              tag:
+                type: string
+        uri:
+          type: string
+          description: Output only. The main URI where the service is serving traffic.
+        reconciling:
+          type: boolean
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              state:
+                type: string
+              message:
+                type: string
+              lastTransitionTime:
+                type: string
+                format: date-time
+              severity:
+                type: string
+        latestReadyRevision:
+          type: string
+        latestCreatedRevision:
+          type: string
+    RevisionTemplate:
+      type: object
+      properties:
+        revision:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+        scaling:
+          type: object
+          properties:
+            minInstanceCount:
+              type: integer
+            maxInstanceCount:
+              type: integer
+        vpcAccess:
+          type: object
+          properties:
+            connector:
+              type: string
+            egress:
+              type: string
+        timeout:
+          type: string
+        serviceAccount:
+          type: string
+        containers:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              image:
+                type: string
+              command:
+                type: array
+                items:
+                  type: string
+              args:
+                type: array
+                items:
+                  type: string
+              env:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    value:
+                      type: string
+              resources:
+                type: object
+                properties:
+                  limits:
+                    type: object
+                    additionalProperties:
+                      type: string
+                  cpuIdle:
+                    type: boolean
+                  startupCpuBoost:
+                    type: boolean
+              ports:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    containerPort:
+                      type: integer
+              volumeMounts:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                    mountPath:
+                      type: string
+        volumes:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              secret:
+                type: object
+                properties:
+                  secret:
+                    type: string
+                  items:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        path:
+                          type: string
+                        version:
+                          type: string
+        maxInstanceRequestConcurrency:
+          type: integer
+        executionEnvironment:
+          type: string
+          enum:
+          - EXECUTION_ENVIRONMENT_UNSPECIFIED
+          - EXECUTION_ENVIRONMENT_GEN1
+          - EXECUTION_ENVIRONMENT_GEN2
+    Revision:
+      type: object
+      properties:
+        name:
+          type: string
+        uid:
+          type: string
+        generation:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        launchStage:
+          type: string
+        service:
+          type: string
+        scaling:
+          type: object
+          properties:
+            minInstanceCount:
+              type: integer
+            maxInstanceCount:
+              type: integer
+        containers:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              image:
+                type: string
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              state:
+                type: string
+              message:
+                type: string
+    Job:
+      type: object
+      properties:
+        name:
+          type: string
+        uid:
+          type: string
+        generation:
+          type: string
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        launchStage:
+          type: string
+        template:
+          type: object
+          properties:
+            labels:
+              type: object
+              additionalProperties:
+                type: string
+            parallelism:
+              type: integer
+            taskCount:
+              type: integer
+            template:
+              type: object
+              properties:
+                containers:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      image:
+                        type: string
+                      command:
+                        type: array
+                        items:
+                          type: string
+                      args:
+                        type: array
+                        items:
+                          type: string
+                      env:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            value:
+                              type: string
+                      resources:
+                        type: object
+                        properties:
+                          limits:
+                            type: object
+                            additionalProperties:
+                              type: string
+                timeout:
+                  type: string
+                serviceAccount:
+                  type: string
+                maxRetries:
+                  type: integer
+        executionCount:
+          type: integer
+        latestCreatedExecution:
+          type: object
+          properties:
+            name:
+              type: string
+            createTime:
+              type: string
+              format: date-time
+            completionTime:
+              type: string
+              format: date-time
+        reconciling:
+          type: boolean
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              state:
+                type: string
+              message:
+                type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
+    ListServicesResponse:
+      type: object
+      properties:
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+        nextPageToken:
+          type: string
+    ListRevisionsResponse:
+      type: object
+      properties:
+        revisions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Revision'
+        nextPageToken:
+          type: string
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        nextPageToken:
+          type: string

@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/google-cloud-run/refs/heads/main/json-schema/google-cloud-run-service-schema.json",
+  "title": "Google Cloud Run Service",
+  "description": "Represents a Cloud Run service, which is a serverless application that runs stateless containers invocable via HTTP requests.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The fully qualified name of the service in the format projects/{project}/locations/{location}/services/{service}."
+    },
+    "description": {
+      "type": "string",
+      "description": "User-provided description of the service."
+    },
+    "uid": {
+      "type": "string",
+      "description": "Output only. Server-assigned unique identifier for the service."
+    },
+    "generation": {
+      "type": "string",
+      "description": "Output only. A number that monotonically increases every time the user modifies the service."
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Unstructured key-value map for user-defined labels."
+    },
+    "annotations": {
+      "type": "object",
+      "additionalProperties": { "type": "string" },
+      "description": "Unstructured key-value map for user-defined annotations."
+    },
+    "createTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Output only. The creation time."
+    },
+    "updateTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Output only. The last-modified time."
+    },
+    "ingress": {
+      "type": "string",
+      "enum": [
+        "INGRESS_TRAFFIC_UNSPECIFIED",
+        "INGRESS_TRAFFIC_ALL",
+        "INGRESS_TRAFFIC_INTERNAL_ONLY",
+        "INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER"
+      ],
+      "description": "Provides the ingress settings for this service."
+    },
+    "launchStage": {
+      "type": "string",
+      "enum": ["LAUNCH_STAGE_UNSPECIFIED", "UNIMPLEMENTED", "PRELAUNCH", "EARLY_ACCESS", "ALPHA", "BETA", "GA", "DEPRECATED"],
+      "description": "The launch stage as defined by Google Cloud Platform Launch Stages."
+    },
+    "template": {
+      "type": "object",
+      "description": "The template used to create revisions for this service.",
+      "properties": {
+        "revision": { "type": "string" },
+        "scaling": {
+          "type": "object",
+          "properties": {
+            "minInstanceCount": { "type": "integer" },
+            "maxInstanceCount": { "type": "integer" }
+          }
+        },
+        "timeout": { "type": "string" },
+        "serviceAccount": { "type": "string" },
+        "containers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "image": { "type": "string", "description": "Container image URI." },
+              "command": { "type": "array", "items": { "type": "string" } },
+              "args": { "type": "array", "items": { "type": "string" } },
+              "env": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "value": { "type": "string" }
+                  }
+                }
+              },
+              "resources": {
+                "type": "object",
+                "properties": {
+                  "limits": {
+                    "type": "object",
+                    "additionalProperties": { "type": "string" }
+                  },
+                  "cpuIdle": { "type": "boolean" },
+                  "startupCpuBoost": { "type": "boolean" }
+                }
+              },
+              "ports": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": { "type": "string" },
+                    "containerPort": { "type": "integer" }
+                  }
+                }
+              }
+            },
+            "required": ["image"]
+          }
+        },
+        "maxInstanceRequestConcurrency": { "type": "integer" },
+        "executionEnvironment": {
+          "type": "string",
+          "enum": ["EXECUTION_ENVIRONMENT_UNSPECIFIED", "EXECUTION_ENVIRONMENT_GEN1", "EXECUTION_ENVIRONMENT_GEN2"]
+        }
+      }
+    },
+    "traffic": {
+      "type": "array",
+      "description": "Specifies how to distribute traffic over a collection of revisions.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED", "TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST", "TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION"]
+          },
+          "revision": { "type": "string" },
+          "percent": { "type": "integer" },
+          "tag": { "type": "string" }
+        }
+      }
+    },
+    "uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "Output only. The main URI where the service is serving traffic."
+    },
+    "latestReadyRevision": {
+      "type": "string",
+      "description": "Output only. Name of the latest revision that is serving traffic."
+    },
+    "latestCreatedRevision": {
+      "type": "string",
+      "description": "Output only. Name of the last created revision."
+    }
+  }
+}
