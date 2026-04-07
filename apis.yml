@@ -9,10 +9,10 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Serverless
-  - Containers
   - Cloud Run
+  - Containers
   - Google Cloud
+  - Serverless
 apis:
   - name: Google Cloud Run Admin API
     description: >-
@@ -21,9 +21,8 @@ apis:
     humanURL: https://cloud.google.com/run/docs
     baseURL: https://run.googleapis.com
     tags:
-      - Serverless
       - Containers
-      - Services
+      - Serverless
     properties:
       - type: Documentation
         url: https://cloud.google.com/run/docs/reference/rest

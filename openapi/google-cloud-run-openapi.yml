@@ -22,26 +22,17 @@ servers:
 security:
   - oauth2: []
 tags:
-  - name: Services
-    description: Operations for managing Cloud Run services
-  - name: Revisions
-    description: Operations for managing service revisions
   - name: Jobs
     description: Operations for managing Cloud Run jobs
-  - name: Executions
-    description: Operations for managing job executions
-  - name: Tasks
-    description: Operations for managing execution tasks
-  - name: Operations
-    description: Long-running operation management
+  - name: Revisions
+    description: Operations for managing service revisions
 paths:
   /projects/{projectId}/locations/{location}/services:
     get:
       operationId: listServices
       summary: Google Cloud Run List services
       description: Lists services in the given project and location.
-      tags:
-        - Services
+      tags: []
       parameters:
         - name: projectId
           in: path
@@ -76,8 +67,7 @@ paths:
       operationId: createService
       summary: Google Cloud Run Create a service
       description: Creates a new service in the given project and location.
-      tags:
-        - Services
+      tags: []
       parameters:
         - name: projectId
           in: path
@@ -112,8 +102,7 @@ paths:
       operationId: getService
       summary: Google Cloud Run Get a service
       description: Gets information about a service.
-      tags:
-        - Services
+      tags: []
       parameters:
         - name: projectId
           in: path
@@ -141,8 +130,7 @@ paths:
       operationId: updateService
       summary: Google Cloud Run Update a service
       description: Updates a service.
-      tags:
-        - Services
+      tags: []
       parameters:
         - name: projectId
           in: path
@@ -180,8 +168,7 @@ paths:
       operationId: deleteService
       summary: Google Cloud Run Delete a service
       description: Deletes a service.
-      tags:
-        - Services
+      tags: []
       parameters:
         - name: projectId
           in: path
