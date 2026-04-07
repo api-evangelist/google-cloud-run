@@ -17,54 +17,54 @@ externalDocs:
   description: Google Cloud Run Documentation
   url: https://cloud.google.com/run/docs/reference/rest
 servers:
-- url: https://run.googleapis.com/v2
-  description: Google Cloud Run Admin API v2
+  - url: https://run.googleapis.com/v2
+    description: Google Cloud Run Admin API v2
 security:
-- oauth2: []
+  - oauth2: []
 tags:
-- name: Services
-  description: Operations for managing Cloud Run services
-- name: Revisions
-  description: Operations for managing service revisions
-- name: Jobs
-  description: Operations for managing Cloud Run jobs
-- name: Executions
-  description: Operations for managing job executions
-- name: Tasks
-  description: Operations for managing execution tasks
-- name: Operations
-  description: Long-running operation management
+  - name: Services
+    description: Operations for managing Cloud Run services
+  - name: Revisions
+    description: Operations for managing service revisions
+  - name: Jobs
+    description: Operations for managing Cloud Run jobs
+  - name: Executions
+    description: Operations for managing job executions
+  - name: Tasks
+    description: Operations for managing execution tasks
+  - name: Operations
+    description: Long-running operation management
 paths:
   /projects/{projectId}/locations/{location}/services:
     get:
       operationId: listServices
-      summary: List services
+      summary: Google Cloud Run List services
       description: Lists services in the given project and location.
       tags:
-      - Services
+        - Services
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
-      - name: showDeleted
-        in: query
-        schema:
-          type: boolean
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: showDeleted
+          in: query
+          schema:
+            type: boolean
       responses:
         '200':
           description: Successful response
@@ -74,26 +74,26 @@ paths:
                 $ref: '#/components/schemas/ListServicesResponse'
     post:
       operationId: createService
-      summary: Create a service
+      summary: Google Cloud Run Create a service
       description: Creates a new service in the given project and location.
       tags:
-      - Services
+        - Services
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -110,26 +110,26 @@ paths:
   /projects/{projectId}/locations/{location}/services/{serviceId}:
     get:
       operationId: getService
-      summary: Get a service
+      summary: Google Cloud Run Get a service
       description: Gets information about a service.
       tags:
-      - Services
+        - Services
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -139,30 +139,30 @@ paths:
                 $ref: '#/components/schemas/Service'
     patch:
       operationId: updateService
-      summary: Update a service
+      summary: Google Cloud Run Update a service
       description: Updates a service.
       tags:
-      - Services
+        - Services
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: updateMask
-        in: query
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: updateMask
+          in: query
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -178,26 +178,26 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteService
-      summary: Delete a service
+      summary: Google Cloud Run Delete a service
       description: Deletes a service.
       tags:
-      - Services
+        - Services
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response with long-running operation
@@ -208,38 +208,38 @@ paths:
   /projects/{projectId}/locations/{location}/services/{serviceId}/revisions:
     get:
       operationId: listRevisions
-      summary: List revisions
+      summary: Google Cloud Run List revisions
       description: Lists revisions for a given service in the given project and location.
       tags:
-      - Revisions
+        - Revisions
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
-      - name: showDeleted
-        in: query
-        schema:
-          type: boolean
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: showDeleted
+          in: query
+          schema:
+            type: boolean
       responses:
         '200':
           description: Successful response
@@ -250,31 +250,31 @@ paths:
   /projects/{projectId}/locations/{location}/services/{serviceId}/revisions/{revisionId}:
     get:
       operationId: getRevision
-      summary: Get a revision
+      summary: Google Cloud Run Get a revision
       description: Gets information about a revision.
       tags:
-      - Revisions
+        - Revisions
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: revisionId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: revisionId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -284,31 +284,31 @@ paths:
                 $ref: '#/components/schemas/Revision'
     delete:
       operationId: deleteRevision
-      summary: Delete a revision
+      summary: Google Cloud Run Delete a revision
       description: Deletes a revision.
       tags:
-      - Revisions
+        - Revisions
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: serviceId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: revisionId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: serviceId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: revisionId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response with long-running operation
@@ -319,33 +319,33 @@ paths:
   /projects/{projectId}/locations/{location}/jobs:
     get:
       operationId: listJobs
-      summary: List jobs
+      summary: Google Cloud Run List jobs
       description: Lists jobs in the given project and location.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: pageSize
-        in: query
-        schema:
-          type: integer
-      - name: pageToken
-        in: query
-        schema:
-          type: string
-      - name: showDeleted
-        in: query
-        schema:
-          type: boolean
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: pageSize
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+        - name: showDeleted
+          in: query
+          schema:
+            type: boolean
       responses:
         '200':
           description: Successful response
@@ -355,26 +355,26 @@ paths:
                 $ref: '#/components/schemas/ListJobsResponse'
     post:
       operationId: createJob
-      summary: Create a job
+      summary: Google Cloud Run Create a job
       description: Creates a new job in the given project and location.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: jobId
-        in: query
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: query
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -391,26 +391,26 @@ paths:
   /projects/{projectId}/locations/{location}/jobs/{jobId}:
     get:
       operationId: getJob
-      summary: Get a job
+      summary: Google Cloud Run Get a job
       description: Gets information about a job.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: jobId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response
@@ -420,26 +420,26 @@ paths:
                 $ref: '#/components/schemas/Job'
     patch:
       operationId: updateJob
-      summary: Update a job
+      summary: Google Cloud Run Update a job
       description: Updates a job.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: jobId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -455,26 +455,26 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteJob
-      summary: Delete a job
+      summary: Google Cloud Run Delete a job
       description: Deletes a job.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: jobId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
       responses:
         '200':
           description: Successful response with long-running operation
@@ -485,26 +485,26 @@ paths:
   /projects/{projectId}/locations/{location}/jobs/{jobId}:run:
     post:
       operationId: runJob
-      summary: Run a job
+      summary: Google Cloud Run Run a job
       description: Triggers creation of a new execution of this job.
       tags:
-      - Jobs
+        - Jobs
       parameters:
-      - name: projectId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: location
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: jobId
-        in: path
-        required: true
-        schema:
-          type: string
+        - name: projectId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: location
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: path
+          required: true
+          schema:
+            type: string
       requestBody:
         content:
           application/json:
@@ -598,21 +598,21 @@ components:
         ingress:
           type: string
           enum:
-          - INGRESS_TRAFFIC_UNSPECIFIED
-          - INGRESS_TRAFFIC_ALL
-          - INGRESS_TRAFFIC_INTERNAL_ONLY
-          - INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER
+            - INGRESS_TRAFFIC_UNSPECIFIED
+            - INGRESS_TRAFFIC_ALL
+            - INGRESS_TRAFFIC_INTERNAL_ONLY
+            - INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER
         launchStage:
           type: string
           enum:
-          - LAUNCH_STAGE_UNSPECIFIED
-          - UNIMPLEMENTED
-          - PRELAUNCH
-          - EARLY_ACCESS
-          - ALPHA
-          - BETA
-          - GA
-          - DEPRECATED
+            - LAUNCH_STAGE_UNSPECIFIED
+            - UNIMPLEMENTED
+            - PRELAUNCH
+            - EARLY_ACCESS
+            - ALPHA
+            - BETA
+            - GA
+            - DEPRECATED
         template:
           $ref: '#/components/schemas/RevisionTemplate'
         traffic:
@@ -623,9 +623,9 @@ components:
               type:
                 type: string
                 enum:
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION
+                  - TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED
+                  - TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST
+                  - TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION
               revision:
                 type: string
               percent:
@@ -769,9 +769,9 @@ components:
         executionEnvironment:
           type: string
           enum:
-          - EXECUTION_ENVIRONMENT_UNSPECIFIED
-          - EXECUTION_ENVIRONMENT_GEN1
-          - EXECUTION_ENVIRONMENT_GEN2
+            - EXECUTION_ENVIRONMENT_UNSPECIFIED
+            - EXECUTION_ENVIRONMENT_GEN1
+            - EXECUTION_ENVIRONMENT_GEN2
     Revision:
       type: object
       properties:
