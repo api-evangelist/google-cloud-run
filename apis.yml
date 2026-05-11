@@ -55,6 +55,10 @@ common:
     url: https://cloud.google.com/run/docs/support
   - type: JSON-LD
     url: json-ld/google-cloud-run-context.jsonld
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
