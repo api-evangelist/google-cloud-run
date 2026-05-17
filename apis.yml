@@ -30,14 +30,14 @@ apis:
         url: openapi/google-cloud-run-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/run/docs/quickstarts
       - type: JSONSchema
         url: json-schema/google-cloud-run-service-schema.json
 common:
   - type: Portal
     url: https://cloud.google.com/run
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/run/docs/quickstarts
   - type: Documentation
     url: https://cloud.google.com/run/docs
@@ -45,15 +45,15 @@ common:
     url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/run/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/run/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/google-cloud-run-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
