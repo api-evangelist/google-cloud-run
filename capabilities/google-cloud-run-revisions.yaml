@@ -1,0 +1,217 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Run Admin API — Revisions
+  description: 'Google Cloud Run Admin API — Revisions. 3 operations. Lead operation: Google Cloud Run List revisions. Self-contained
+    Naftiko capability covering one Google Cloud Run business surface.'
+  tags:
+  - Google Cloud Run
+  - Revisions
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_RUN_API_KEY: GOOGLE_CLOUD_RUN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-run-revisions
+    baseUri: https://run.googleapis.com/v2
+    description: Google Cloud Run Admin API — Revisions business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-services-serviceId-revisions
+      path: /projects/{projectId}/locations/{location}/services/{serviceId}/revisions
+      operations:
+      - name: listrevisions
+        method: GET
+        description: Google Cloud Run List revisions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: showDeleted
+          in: query
+          type: boolean
+    - name: projects-projectId-locations-location-services-serviceId-revisions-revisionId
+      path: /projects/{projectId}/locations/{location}/services/{serviceId}/revisions/{revisionId}
+      operations:
+      - name: getrevision
+        method: GET
+        description: Google Cloud Run Get a revision
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+        - name: revisionId
+          in: path
+          type: string
+          required: true
+      - name: deleterevision
+        method: DELETE
+        description: Google Cloud Run Delete a revision
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+        - name: revisionId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_RUN_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: google-cloud-run-revisions-rest
+    port: 8080
+    description: REST adapter for Google Cloud Run Admin API — Revisions. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/services/{serviceid}/revisions
+      name: projects-projectid-locations-location-services-serviceid-revisions
+      description: REST surface for projects-projectId-locations-location-services-serviceId-revisions.
+      operations:
+      - method: GET
+        name: listrevisions
+        description: Google Cloud Run List revisions
+        call: google-cloud-run-revisions.listrevisions
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+          showDeleted: rest.showDeleted
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/services/{serviceid}/revisions/{revisionid}
+      name: projects-projectid-locations-location-services-serviceid-revisions-revisionid
+      description: REST surface for projects-projectId-locations-location-services-serviceId-revisions-revisionId.
+      operations:
+      - method: GET
+        name: getrevision
+        description: Google Cloud Run Get a revision
+        call: google-cloud-run-revisions.getrevision
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+          revisionId: rest.revisionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleterevision
+        description: Google Cloud Run Delete a revision
+        call: google-cloud-run-revisions.deleterevision
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+          revisionId: rest.revisionId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: google-cloud-run-revisions-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Run Admin API — Revisions. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-run-list-revisions
+      description: Google Cloud Run List revisions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-revisions.listrevisions
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        showDeleted: tools.showDeleted
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-get-revision
+      description: Google Cloud Run Get a revision
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-revisions.getrevision
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+        revisionId: tools.revisionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-delete-revision
+      description: Google Cloud Run Delete a revision
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-run-revisions.deleterevision
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+        revisionId: tools.revisionId
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,365 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Run Admin API — Jobs
+  description: 'Google Cloud Run Admin API — Jobs. 6 operations. Lead operation: Google Cloud Run List jobs. Self-contained
+    Naftiko capability covering one Google Cloud Run business surface.'
+  tags:
+  - Google Cloud Run
+  - Jobs
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_RUN_API_KEY: GOOGLE_CLOUD_RUN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-run-jobs
+    baseUri: https://run.googleapis.com/v2
+    description: Google Cloud Run Admin API — Jobs business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-jobs
+      path: /projects/{projectId}/locations/{location}/jobs
+      operations:
+      - name: listjobs
+        method: GET
+        description: Google Cloud Run List jobs
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: showDeleted
+          in: query
+          type: boolean
+      - name: createjob
+        method: POST
+        description: Google Cloud Run Create a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-locations-location-jobs-jobId
+      path: /projects/{projectId}/locations/{location}/jobs/{jobId}
+      operations:
+      - name: getjob
+        method: GET
+        description: Google Cloud Run Get a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+      - name: updatejob
+        method: PATCH
+        description: Google Cloud Run Update a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletejob
+        method: DELETE
+        description: Google Cloud Run Delete a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+    - name: projects-projectId-locations-location-jobs-jobId}:run
+      path: /projects/{projectId}/locations/{location}/jobs/{jobId}:run
+      operations:
+      - name: runjob
+        method: POST
+        description: Google Cloud Run Run a job
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: jobId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_RUN_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: google-cloud-run-jobs-rest
+    port: 8080
+    description: REST adapter for Google Cloud Run Admin API — Jobs. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/jobs
+      name: projects-projectid-locations-location-jobs
+      description: REST surface for projects-projectId-locations-location-jobs.
+      operations:
+      - method: GET
+        name: listjobs
+        description: Google Cloud Run List jobs
+        call: google-cloud-run-jobs.listjobs
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+          showDeleted: rest.showDeleted
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createjob
+        description: Google Cloud Run Create a job
+        call: google-cloud-run-jobs.createjob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          jobId: rest.jobId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/jobs/{jobid}
+      name: projects-projectid-locations-location-jobs-jobid
+      description: REST surface for projects-projectId-locations-location-jobs-jobId.
+      operations:
+      - method: GET
+        name: getjob
+        description: Google Cloud Run Get a job
+        call: google-cloud-run-jobs.getjob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatejob
+        description: Google Cloud Run Update a job
+        call: google-cloud-run-jobs.updatejob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          jobId: rest.jobId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletejob
+        description: Google Cloud Run Delete a job
+        call: google-cloud-run-jobs.deletejob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          jobId: rest.jobId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/jobs/jobid-run
+      name: projects-projectid-locations-location-jobs-jobid-run
+      description: REST surface for projects-projectId-locations-location-jobs-jobId}:run.
+      operations:
+      - method: POST
+        name: runjob
+        description: Google Cloud Run Run a job
+        call: google-cloud-run-jobs.runjob
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          jobId: rest.jobId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: google-cloud-run-jobs-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Run Admin API — Jobs. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-run-list-jobs
+      description: Google Cloud Run List jobs
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-jobs.listjobs
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        showDeleted: tools.showDeleted
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-create-job
+      description: Google Cloud Run Create a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-run-jobs.createjob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        jobId: tools.jobId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-get-job
+      description: Google Cloud Run Get a job
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-jobs.getjob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-update-job
+      description: Google Cloud Run Update a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-jobs.updatejob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        jobId: tools.jobId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-delete-job
+      description: Google Cloud Run Delete a job
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-run-jobs.deletejob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        jobId: tools.jobId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-run-job
+      description: Google Cloud Run Run a job
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-run-jobs.runjob
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        jobId: tools.jobId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

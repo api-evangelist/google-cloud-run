@@ -1,0 +1,309 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud Run Admin API
+  description: 'Google Cloud Run Admin API. 5 operations. Lead operation: Google Cloud Run List services. Self-contained Naftiko
+    capability covering one Google Cloud Run business surface.'
+  tags:
+  - Google Cloud Run
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_RUN_API_KEY: GOOGLE_CLOUD_RUN_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-run-general
+    baseUri: https://run.googleapis.com/v2
+    description: Google Cloud Run Admin API business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-projectId-locations-location-services
+      path: /projects/{projectId}/locations/{location}/services
+      operations:
+      - name: listservices
+        method: GET
+        description: Google Cloud Run List services
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: pageSize
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        - name: showDeleted
+          in: query
+          type: boolean
+      - name: createservice
+        method: POST
+        description: Google Cloud Run Create a service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: query
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: projects-projectId-locations-location-services-serviceId
+      path: /projects/{projectId}/locations/{location}/services/{serviceId}
+      operations:
+      - name: getservice
+        method: GET
+        description: Google Cloud Run Get a service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+      - name: updateservice
+        method: PATCH
+        description: Google Cloud Run Update a service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+        - name: updateMask
+          in: query
+          type: string
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteservice
+        method: DELETE
+        description: Google Cloud Run Delete a service
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: projectId
+          in: path
+          type: string
+          required: true
+        - name: location
+          in: path
+          type: string
+          required: true
+        - name: serviceId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_RUN_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: google-cloud-run-general-rest
+    port: 8080
+    description: REST adapter for Google Cloud Run Admin API. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/projects/{projectid}/locations/{location}/services
+      name: projects-projectid-locations-location-services
+      description: REST surface for projects-projectId-locations-location-services.
+      operations:
+      - method: GET
+        name: listservices
+        description: Google Cloud Run List services
+        call: google-cloud-run-general.listservices
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          pageSize: rest.pageSize
+          pageToken: rest.pageToken
+          showDeleted: rest.showDeleted
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createservice
+        description: Google Cloud Run Create a service
+        call: google-cloud-run-general.createservice
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{projectid}/locations/{location}/services/{serviceid}
+      name: projects-projectid-locations-location-services-serviceid
+      description: REST surface for projects-projectId-locations-location-services-serviceId.
+      operations:
+      - method: GET
+        name: getservice
+        description: Google Cloud Run Get a service
+        call: google-cloud-run-general.getservice
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateservice
+        description: Google Cloud Run Update a service
+        call: google-cloud-run-general.updateservice
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+          updateMask: rest.updateMask
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteservice
+        description: Google Cloud Run Delete a service
+        call: google-cloud-run-general.deleteservice
+        with:
+          projectId: rest.projectId
+          location: rest.location
+          serviceId: rest.serviceId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: google-cloud-run-general-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud Run Admin API. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: google-cloud-run-list-services
+      description: Google Cloud Run List services
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-general.listservices
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        pageSize: tools.pageSize
+        pageToken: tools.pageToken
+        showDeleted: tools.showDeleted
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-create-service
+      description: Google Cloud Run Create a service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-run-general.createservice
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-get-service
+      description: Google Cloud Run Get a service
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-general.getservice
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-update-service
+      description: Google Cloud Run Update a service
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: google-cloud-run-general.updateservice
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+        updateMask: tools.updateMask
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-run-delete-service
+      description: Google Cloud Run Delete a service
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-run-general.deleteservice
+      with:
+        projectId: tools.projectId
+        location: tools.location
+        serviceId: tools.serviceId
+      outputParameters:
+      - type: object
+        mapping: $.
