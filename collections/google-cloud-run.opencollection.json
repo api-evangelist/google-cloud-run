@@ -1,0 +1,508 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud Run Admin API",
+    "version": "v2"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Run List services",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showDeleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists services in the given project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Create a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new service in the given project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Get a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about a service."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Update a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "updateMask",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a service."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Delete a service",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a service."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Revisions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Run List revisions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId/revisions",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showDeleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists revisions for a given service in the given project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Get a revision",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revisionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about a revision."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Delete a revision",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "serviceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revisionId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a revision."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud Run List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showDeleted",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Lists jobs in the given project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Create a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new job in the given project and location."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Get a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs/:jobId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about a job."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Update a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs/:jobId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates a job."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Delete a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs/:jobId",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a job."
+        },
+        {
+          "info": {
+            "name": "Google Cloud Run Run a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://run.googleapis.com/v2/projects/:projectId/locations/:location/jobs/:jobId:run",
+            "params": [
+              {
+                "name": "projectId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Triggers creation of a new execution of this job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
