@@ -3,7 +3,7 @@ name: Google Cloud Run
 description: >-
   Google Cloud Run is a fully managed serverless platform that enables you to run stateless containers that are
   invocable via HTTP requests. It abstracts away infrastructure management so you can focus on building applications.
-image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-run/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -20,7 +20,7 @@ apis:
       The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It allows you
       to create, update, and delete services and revisions, manage traffic routing between revisions, and configure
       domain mappings and IAM policies.
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://cloud.google.com/run/docs
     baseURL: https://run.googleapis.com
     tags:
