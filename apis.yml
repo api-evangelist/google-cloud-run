@@ -38,6 +38,8 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-run-service-schema.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-run-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/GoogleCloudPlatform
   - type: Portal
