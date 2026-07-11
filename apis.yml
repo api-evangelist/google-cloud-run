@@ -38,6 +38,12 @@ apis:
       - type: JSONSchema
         url: json-schema/google-cloud-run-service-schema.json
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-cloud-run-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-cloud-run-domain-security.yml
+  - type: Authentication
+    url: authentication/google-cloud-run-authentication.yml
   - type: OAuthScopes
     url: scopes/google-cloud-run-scopes.yml
   - type: GitHubOrganization
