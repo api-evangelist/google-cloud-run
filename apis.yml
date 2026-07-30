@@ -3,7 +3,20 @@ name: Google Cloud Run
 description: >-
   Google Cloud Run is a fully managed serverless platform that enables you to run stateless containers that are
   invocable via HTTP requests. It abstracts away infrastructure management so you can focus on building applications.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-run.png
 url: https://raw.githubusercontent.com/api-evangelist/google-cloud-run/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -15,29 +28,63 @@ tags:
   - Google Cloud
   - Serverless
 apis:
-  - name: Google Cloud Run Admin API
-    description: >-
-      The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It allows you
-      to create, update, and delete services and revisions, manage traffic routing between revisions, and configure
-      domain mappings and IAM policies.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/run/docs
-    baseURL: https://run.googleapis.com
-    tags:
-      - Containers
-      - Serverless
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/run/docs/reference/rest
-      - type: OpenAPI
-        url: openapi/google-cloud-run-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/run/docs/quickstarts
-      - type: JSONSchema
-        url: json-schema/google-cloud-run-service-schema.json
+- aid: google-cloud-run:google-cloud-run-jobs-api
+  name: Google Cloud Run Jobs API
+  description: Operations for managing Cloud Run jobs
+  humanURL: https://cloud.google.com/run/docs
+  baseURL: https://run.googleapis.com
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-run-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/run/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/run/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/google-cloud-run-service-schema.json
+- aid: google-cloud-run:google-cloud-run-projects-api
+  name: Google Cloud Run Projects API
+  description: The Projects API from Google Cloud Run — 2 operation(s) for projects.
+  humanURL: https://cloud.google.com/run/docs
+  baseURL: https://run.googleapis.com
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-run-projects-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/run/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/run/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/google-cloud-run-service-schema.json
+- aid: google-cloud-run:google-cloud-run-revisions-api
+  name: Google Cloud Run Revisions API
+  description: Operations for managing service revisions
+  humanURL: https://cloud.google.com/run/docs
+  baseURL: https://run.googleapis.com
+  tags:
+  - Revisions
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-run-revisions-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/run/docs/reference/rest
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/run/docs/quickstarts
+  - type: JSONSchema
+    url: json-schema/google-cloud-run-service-schema.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-run/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-run-agentic-access.yml
   - type: VulnerabilityDisclosure
