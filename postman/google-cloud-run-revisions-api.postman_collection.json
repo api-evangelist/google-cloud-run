@@ -1,0 +1,515 @@
+{
+  "info": {
+    "_postman_id": "1cc208be-dc34-4a42-8054-15ab8b94c83e",
+    "name": "Google Cloud Run Admin Jobs Revisions API",
+    "description": "The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It supports creating, updating, and deleting services, managing revisions and traffic splitting, executing jobs, and configuring domain mappings.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:15.000Z",
+    "updatedAt": "2026-07-28T01:48:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1cc208be-dc34-4a42-8054-15ab8b94c83e"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "services",
+                      "item": [
+                        {
+                          "name": "{serviceId}",
+                          "item": [
+                            {
+                              "name": "revisions",
+                              "item": [
+                                {
+                                  "name": "{revisionId}",
+                                  "item": [
+                                    {
+                                      "name": "Google Cloud Run Get a revision",
+                                      "id": "684e7cb1-42bb-47a3-9fb4-fdca70965b8d",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "services",
+                                            ":serviceId",
+                                            "revisions",
+                                            ":revisionId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "444c4b3b-9c2e-421c-b147-10668bcc64d3",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "54cd7e31-4e81-433f-b9aa-f44732ae98ca",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "b55bc521-9ee8-4294-b030-8b9adf83044d",
+                                              "key": "serviceId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "5f4c4b78-73b2-4b8a-896d-22d7270c5c77",
+                                              "key": "revisionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Gets information about a revision."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "4221bb91-46f3-434d-950a-3a225df070bb",
+                                          "name": "Successful response",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "services",
+                                                ":serviceId",
+                                                "revisions",
+                                                ":revisionId"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "serviceId"
+                                                },
+                                                {
+                                                  "key": "revisionId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"ut39\": \"<string>\",\n    \"Lorem_7\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"launchStage\": \"<string>\",\n  \"service\": \"<string>\",\n  \"scaling\": {\n    \"minInstanceCount\": \"<integer>\",\n    \"maxInstanceCount\": \"<integer>\"\n  },\n  \"containers\": [\n    {\n      \"name\": \"<string>\",\n      \"image\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"image\": \"<string>\"\n    }\n  ],\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\"\n    }\n  ]\n}",
+                                          "createdAt": "2026-07-28T01:48:15.000Z",
+                                          "updatedAt": "2026-07-28T01:48:15.000Z",
+                                          "uid": "35240-4221bb91-46f3-434d-950a-3a225df070bb"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:48:15.000Z",
+                                      "updatedAt": "2026-07-28T01:48:15.000Z",
+                                      "uid": "35240-684e7cb1-42bb-47a3-9fb4-fdca70965b8d"
+                                    },
+                                    {
+                                      "name": "Google Cloud Run Delete a revision",
+                                      "id": "92c6b237-ee79-482e-bb2f-11e425ceec03",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "services",
+                                            ":serviceId",
+                                            "revisions",
+                                            ":revisionId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "678779f2-4c28-40b8-810e-ca1950f3fc9b",
+                                              "key": "projectId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "b3b5c069-c2ea-4d36-a816-a828cf156d34",
+                                              "key": "location",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "da110d0a-006f-46fd-a215-07c34db9b422",
+                                              "key": "serviceId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "66b7dcf8-c190-4a48-a43c-b0b945d19a16",
+                                              "key": "revisionId",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Deletes a revision."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "b54b5c7c-03f6-44ab-ab33-b60c09a85239",
+                                          "name": "Successful response with long-running operation",
+                                          "originalRequest": {
+                                            "method": "DELETE",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions/:revisionId",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "projects",
+                                                ":projectId",
+                                                "locations",
+                                                ":location",
+                                                "services",
+                                                ":serviceId",
+                                                "revisions",
+                                                ":revisionId"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "projectId"
+                                                },
+                                                {
+                                                  "key": "location"
+                                                },
+                                                {
+                                                  "key": "serviceId"
+                                                },
+                                                {
+                                                  "key": "revisionId"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                          "createdAt": "2026-07-28T01:48:15.000Z",
+                                          "updatedAt": "2026-07-28T01:48:15.000Z",
+                                          "uid": "35240-b54b5c7c-03f6-44ab-ab33-b60c09a85239"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T01:48:15.000Z",
+                                      "updatedAt": "2026-07-28T01:48:15.000Z",
+                                      "uid": "35240-92c6b237-ee79-482e-bb2f-11e425ceec03"
+                                    }
+                                  ],
+                                  "id": "c56af848-c8d9-41c9-8b25-e8159177e718",
+                                  "createdAt": "2026-07-28T01:48:15.000Z",
+                                  "updatedAt": "2026-07-28T01:48:15.000Z",
+                                  "uid": "35240-c56af848-c8d9-41c9-8b25-e8159177e718"
+                                },
+                                {
+                                  "name": "Google Cloud Run List revisions",
+                                  "id": "b625a591-b804-446b-a42c-661bf8c94974",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions?pageSize=<integer>&pageToken=<string>&showDeleted=<boolean>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "services",
+                                        ":serviceId",
+                                        "revisions"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "pageSize",
+                                          "value": "<integer>"
+                                        },
+                                        {
+                                          "key": "pageToken",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "key": "showDeleted",
+                                          "value": "<boolean>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "3c98bbdd-0548-48a8-8440-fcf0b39bd2e6",
+                                          "key": "projectId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "b16d2734-2f14-4e18-b358-adc0dfbaa7d0",
+                                          "key": "location",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "7fb1ca84-2259-459f-9178-eb3857946151",
+                                          "key": "serviceId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Lists revisions for a given service in the given project and location."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "9ce3d7c0-8092-4e30-8c27-467dc0a015b7",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId/revisions?pageSize=<integer>&pageToken=<string>&showDeleted=<boolean>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "projects",
+                                            ":projectId",
+                                            "locations",
+                                            ":location",
+                                            "services",
+                                            ":serviceId",
+                                            "revisions"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "pageSize",
+                                              "value": "<integer>"
+                                            },
+                                            {
+                                              "key": "pageToken",
+                                              "value": "<string>"
+                                            },
+                                            {
+                                              "key": "showDeleted",
+                                              "value": "<boolean>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "projectId"
+                                            },
+                                            {
+                                              "key": "location"
+                                            },
+                                            {
+                                              "key": "serviceId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"revisions\": [\n    {\n      \"name\": \"<string>\",\n      \"uid\": \"<string>\",\n      \"generation\": \"<string>\",\n      \"labels\": {\n        \"ad_0f\": \"<string>\",\n        \"iruref6\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"launchStage\": \"<string>\",\n      \"service\": \"<string>\",\n      \"scaling\": {\n        \"minInstanceCount\": \"<integer>\",\n        \"maxInstanceCount\": \"<integer>\"\n      },\n      \"containers\": [\n        {\n          \"name\": \"<string>\",\n          \"image\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"image\": \"<string>\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"uid\": \"<string>\",\n      \"generation\": \"<string>\",\n      \"labels\": {\n        \"ametb7f\": \"<string>\",\n        \"ipsum307\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"launchStage\": \"<string>\",\n      \"service\": \"<string>\",\n      \"scaling\": {\n        \"minInstanceCount\": \"<integer>\",\n        \"maxInstanceCount\": \"<integer>\"\n      },\n      \"containers\": [\n        {\n          \"name\": \"<string>\",\n          \"image\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"image\": \"<string>\"\n        }\n      ],\n      \"conditions\": [\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                                      "createdAt": "2026-07-28T01:48:15.000Z",
+                                      "updatedAt": "2026-07-28T01:48:15.000Z",
+                                      "uid": "35240-9ce3d7c0-8092-4e30-8c27-467dc0a015b7"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:48:15.000Z",
+                                  "updatedAt": "2026-07-28T01:48:15.000Z",
+                                  "uid": "35240-b625a591-b804-446b-a42c-661bf8c94974"
+                                }
+                              ],
+                              "id": "3ba35282-b001-4ff7-b5f7-9e8dc1159365",
+                              "createdAt": "2026-07-28T01:48:15.000Z",
+                              "updatedAt": "2026-07-28T01:48:15.000Z",
+                              "uid": "35240-3ba35282-b001-4ff7-b5f7-9e8dc1159365"
+                            }
+                          ],
+                          "id": "2c91786c-9a61-4154-8cb4-e672c1755ff5",
+                          "createdAt": "2026-07-28T01:48:15.000Z",
+                          "updatedAt": "2026-07-28T01:48:15.000Z",
+                          "uid": "35240-2c91786c-9a61-4154-8cb4-e672c1755ff5"
+                        }
+                      ],
+                      "id": "f5f454de-03bd-4834-91ba-31527af7112f",
+                      "createdAt": "2026-07-28T01:48:15.000Z",
+                      "updatedAt": "2026-07-28T01:48:15.000Z",
+                      "uid": "35240-f5f454de-03bd-4834-91ba-31527af7112f"
+                    }
+                  ],
+                  "id": "57dcf678-702c-4beb-9563-37f9cccc28f4",
+                  "createdAt": "2026-07-28T01:48:15.000Z",
+                  "updatedAt": "2026-07-28T01:48:15.000Z",
+                  "uid": "35240-57dcf678-702c-4beb-9563-37f9cccc28f4"
+                }
+              ],
+              "id": "3a3042b9-f289-40af-b60b-ae908a9b9dad",
+              "createdAt": "2026-07-28T01:48:15.000Z",
+              "updatedAt": "2026-07-28T01:48:15.000Z",
+              "uid": "35240-3a3042b9-f289-40af-b60b-ae908a9b9dad"
+            }
+          ],
+          "id": "8fbcdaaf-0e18-4646-9b54-5ba782ab79d2",
+          "createdAt": "2026-07-28T01:48:15.000Z",
+          "updatedAt": "2026-07-28T01:48:15.000Z",
+          "uid": "35240-8fbcdaaf-0e18-4646-9b54-5ba782ab79d2"
+        }
+      ],
+      "id": "68ad42a2-308d-4a65-8fe0-44732ac9e408",
+      "createdAt": "2026-07-28T01:48:15.000Z",
+      "updatedAt": "2026-07-28T01:48:15.000Z",
+      "uid": "35240-68ad42a2-308d-4a65-8fe0-44732ac9e408"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/run",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://run.googleapis.com/v2"
+    }
+  ]
+}

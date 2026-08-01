@@ -1,0 +1,18 @@
+{
+  "provider": "google-cloud-run",
+  "sources": [
+    "google-cloud-run-jobs-api-openapi.yml",
+    "google-cloud-run-projects-api-openapi.yml",
+    "google-cloud-run-revisions-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-run-jobs-api-openapi.yml",
+    "google-cloud-run-projects-api-openapi.yml",
+    "google-cloud-run-revisions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

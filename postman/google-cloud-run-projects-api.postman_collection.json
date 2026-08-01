@@ -1,0 +1,757 @@
+{
+  "info": {
+    "_postman_id": "4a757754-9de4-4fbd-8d7f-39b3e4d2840e",
+    "name": "Google Cloud Run Admin Jobs Projects API",
+    "description": "The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It supports creating, updating, and deleting services, managing revisions and traffic splitting, executing jobs, and configuring domain mappings.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:48:14.000Z",
+    "updatedAt": "2026-07-28T01:48:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4a757754-9de4-4fbd-8d7f-39b3e4d2840e"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{projectId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{location}",
+                  "item": [
+                    {
+                      "name": "services",
+                      "item": [
+                        {
+                          "name": "{serviceId}",
+                          "item": [
+                            {
+                              "name": "Google Cloud Run Get a service",
+                              "id": "fe7340e2-d8dd-4dc7-ba6e-757c9a9cc0c7",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "services",
+                                    ":serviceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "6a11bc5b-bd18-47e9-a999-aaea4ae81d61",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "7bbbb6e7-fa1b-4f0b-af01-352544d15d34",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "e9b112a5-f20a-445e-8eb6-b9ffc953db7f",
+                                      "key": "serviceId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Gets information about a service."
+                              },
+                              "response": [
+                                {
+                                  "id": "82f1b484-c0be-4496-a90c-60f8c1723935",
+                                  "name": "Successful response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "services",
+                                        ":serviceId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "serviceId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"reprehenderit_6f\": \"<string>\"\n  },\n  \"annotations\": {\n    \"sint4b\": \"<string>\",\n    \"Duis_a1\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"INGRESS_TRAFFIC_ALL\",\n  \"launchStage\": \"DEPRECATED\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"proident_8d\": \"<string>\",\n      \"eiusmod332\": \"<string>\"\n    },\n    \"annotations\": {\n      \"eiusmod_c\": \"<string>\",\n      \"reprehenderit_\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"irure_df\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"elit7f\": \"<string>\",\n            \"quis_8ac\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                                  "createdAt": "2026-07-28T01:48:14.000Z",
+                                  "updatedAt": "2026-07-28T01:48:14.000Z",
+                                  "uid": "35240-82f1b484-c0be-4496-a90c-60f8c1723935"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:14.000Z",
+                              "updatedAt": "2026-07-28T01:48:14.000Z",
+                              "uid": "35240-fe7340e2-d8dd-4dc7-ba6e-757c9a9cc0c7"
+                            },
+                            {
+                              "name": "Google Cloud Run Update a service",
+                              "id": "e921df09-13a3-4546-a839-83e95aa2da80",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"reprehenderit_6f\": \"<string>\"\n  },\n  \"annotations\": {\n    \"sint4b\": \"<string>\",\n    \"Duis_a1\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"INGRESS_TRAFFIC_ALL\",\n  \"launchStage\": \"DEPRECATED\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"proident_8d\": \"<string>\",\n      \"eiusmod332\": \"<string>\"\n    },\n    \"annotations\": {\n      \"eiusmod_c\": \"<string>\",\n      \"reprehenderit_\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"irure_df\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"elit7f\": \"<string>\",\n            \"quis_8ac\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId?updateMask=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "services",
+                                    ":serviceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "updateMask",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "22092113-0752-4766-b3e3-8c991001ea5b",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "c78b08f7-aa58-4d78-8717-8acd69fa461d",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "fb483606-1fcf-49d1-8999-c9f36d8bf2d8",
+                                      "key": "serviceId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Updates a service."
+                              },
+                              "response": [
+                                {
+                                  "id": "a0238ff4-cd2b-4900-8987-b2440a1f5750",
+                                  "name": "Successful response with long-running operation",
+                                  "originalRequest": {
+                                    "method": "PATCH",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"reprehenderit_6f\": \"<string>\"\n  },\n  \"annotations\": {\n    \"sint4b\": \"<string>\",\n    \"Duis_a1\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"INGRESS_TRAFFIC_ALL\",\n  \"launchStage\": \"DEPRECATED\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"proident_8d\": \"<string>\",\n      \"eiusmod332\": \"<string>\"\n    },\n    \"annotations\": {\n      \"eiusmod_c\": \"<string>\",\n      \"reprehenderit_\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"irure_df\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"elit7f\": \"<string>\",\n            \"quis_8ac\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId?updateMask=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "services",
+                                        ":serviceId"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "updateMask",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "serviceId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:48:14.000Z",
+                                  "updatedAt": "2026-07-28T01:48:14.000Z",
+                                  "uid": "35240-a0238ff4-cd2b-4900-8987-b2440a1f5750"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:14.000Z",
+                              "updatedAt": "2026-07-28T01:48:14.000Z",
+                              "uid": "35240-e921df09-13a3-4546-a839-83e95aa2da80"
+                            },
+                            {
+                              "name": "Google Cloud Run Delete a service",
+                              "id": "2962bc8a-6975-49f7-b59b-4d10db715d1a",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "services",
+                                    ":serviceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "9782ac19-800e-44c9-94c7-4a5adf8fecb4",
+                                      "key": "projectId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "5501db19-acf8-4863-9547-a0596f26e054",
+                                      "key": "location",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "3fb187aa-af07-4740-810c-f8b594601629",
+                                      "key": "serviceId",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Deletes a service."
+                              },
+                              "response": [
+                                {
+                                  "id": "87974518-f8b1-4b6e-be5c-7e023881e8c3",
+                                  "name": "Successful response with long-running operation",
+                                  "originalRequest": {
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services/:serviceId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "projects",
+                                        ":projectId",
+                                        "locations",
+                                        ":location",
+                                        "services",
+                                        ":serviceId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "projectId"
+                                        },
+                                        {
+                                          "key": "location"
+                                        },
+                                        {
+                                          "key": "serviceId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                                  "createdAt": "2026-07-28T01:48:14.000Z",
+                                  "updatedAt": "2026-07-28T01:48:14.000Z",
+                                  "uid": "35240-87974518-f8b1-4b6e-be5c-7e023881e8c3"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T01:48:14.000Z",
+                              "updatedAt": "2026-07-28T01:48:14.000Z",
+                              "uid": "35240-2962bc8a-6975-49f7-b59b-4d10db715d1a"
+                            }
+                          ],
+                          "id": "74da1aa9-c8b4-4023-bbfc-42800101373b",
+                          "createdAt": "2026-07-28T01:48:14.000Z",
+                          "updatedAt": "2026-07-28T01:48:14.000Z",
+                          "uid": "35240-74da1aa9-c8b4-4023-bbfc-42800101373b"
+                        },
+                        {
+                          "name": "Google Cloud Run List services",
+                          "id": "0e3eac02-bc1d-497d-b3dd-90029697740b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services?pageSize=<integer>&pageToken=<string>&showDeleted=<boolean>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "services"
+                              ],
+                              "query": [
+                                {
+                                  "key": "pageSize",
+                                  "value": "<integer>"
+                                },
+                                {
+                                  "key": "pageToken",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "showDeleted",
+                                  "value": "<boolean>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "385b7680-955d-476d-aae3-46f2f5fca942",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "64bbc0fb-e09c-4f33-a61f-fd0c57c59a97",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Lists services in the given project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "d949f555-0754-4080-b233-bc4c0cefd250",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services?pageSize=<integer>&pageToken=<string>&showDeleted=<boolean>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "services"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "pageSize",
+                                      "value": "<integer>"
+                                    },
+                                    {
+                                      "key": "pageToken",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "showDeleted",
+                                      "value": "<boolean>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"services\": [\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"uid\": \"<string>\",\n      \"generation\": \"<string>\",\n      \"labels\": {\n        \"Duis_f5\": \"<string>\",\n        \"sed1aa\": \"<string>\"\n      },\n      \"annotations\": {\n        \"aliqua_9\": \"<string>\",\n        \"et27\": \"<string>\",\n        \"elit_e1b\": \"<string>\",\n        \"ut_fb\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"deleteTime\": \"<dateTime>\",\n      \"expireTime\": \"<dateTime>\",\n      \"creator\": \"<string>\",\n      \"lastModifier\": \"<string>\",\n      \"ingress\": \"INGRESS_TRAFFIC_UNSPECIFIED\",\n      \"launchStage\": \"UNIMPLEMENTED\",\n      \"template\": {\n        \"revision\": \"<string>\",\n        \"labels\": {\n          \"occaecatb\": \"<string>\",\n          \"elit0\": \"<string>\"\n        },\n        \"annotations\": {\n          \"tempor__3\": \"<string>\",\n          \"do_07\": \"<string>\"\n        },\n        \"scaling\": {\n          \"minInstanceCount\": \"<integer>\",\n          \"maxInstanceCount\": \"<integer>\"\n        },\n        \"vpcAccess\": {\n          \"connector\": \"<string>\",\n          \"egress\": \"<string>\"\n        },\n        \"timeout\": \"<string>\",\n        \"serviceAccount\": \"<string>\",\n        \"containers\": [\n          {\n            \"name\": \"<string>\",\n            \"image\": \"<string>\",\n            \"command\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"args\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"env\": [\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"id_bad\": \"<string>\",\n                \"veniam39\": \"<string>\",\n                \"veniam_d\": \"<string>\"\n              },\n              \"cpuIdle\": \"<boolean>\",\n              \"startupCpuBoost\": \"<boolean>\"\n            },\n            \"ports\": [\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"<string>\",\n            \"image\": \"<string>\",\n            \"command\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"args\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"env\": [\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"in_89b\": \"<string>\",\n                \"esse__5\": \"<string>\"\n              },\n              \"cpuIdle\": \"<boolean>\",\n              \"startupCpuBoost\": \"<boolean>\"\n            },\n            \"ports\": [\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              }\n            ]\n          }\n        ],\n        \"volumes\": [\n          {\n            \"name\": \"<string>\",\n            \"secret\": {\n              \"secret\": \"<string>\",\n              \"items\": [\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                },\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                }\n              ]\n            }\n          },\n          {\n            \"name\": \"<string>\",\n            \"secret\": {\n              \"secret\": \"<string>\",\n              \"items\": [\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                },\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"maxInstanceRequestConcurrency\": \"<integer>\",\n        \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN1\"\n      },\n      \"traffic\": [\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"<string>\",\n          \"percent\": \"<integer>\",\n          \"tag\": \"<string>\"\n        },\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"<string>\",\n          \"percent\": \"<integer>\",\n          \"tag\": \"<string>\"\n        }\n      ],\n      \"uri\": \"<string>\",\n      \"reconciling\": \"<boolean>\",\n      \"conditions\": [\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\",\n          \"lastTransitionTime\": \"<dateTime>\",\n          \"severity\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\",\n          \"lastTransitionTime\": \"<dateTime>\",\n          \"severity\": \"<string>\"\n        }\n      ],\n      \"latestReadyRevision\": \"<string>\",\n      \"latestCreatedRevision\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"uid\": \"<string>\",\n      \"generation\": \"<string>\",\n      \"labels\": {\n        \"sunt_41d\": \"<string>\"\n      },\n      \"annotations\": {\n        \"nisi_f\": \"<string>\",\n        \"magna_4\": \"<string>\"\n      },\n      \"createTime\": \"<dateTime>\",\n      \"updateTime\": \"<dateTime>\",\n      \"deleteTime\": \"<dateTime>\",\n      \"expireTime\": \"<dateTime>\",\n      \"creator\": \"<string>\",\n      \"lastModifier\": \"<string>\",\n      \"ingress\": \"INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER\",\n      \"launchStage\": \"BETA\",\n      \"template\": {\n        \"revision\": \"<string>\",\n        \"labels\": {\n          \"sed40\": \"<string>\",\n          \"dolor_2\": \"<string>\",\n          \"adipisicing__\": \"<string>\"\n        },\n        \"annotations\": {\n          \"ut_c8\": \"<string>\"\n        },\n        \"scaling\": {\n          \"minInstanceCount\": \"<integer>\",\n          \"maxInstanceCount\": \"<integer>\"\n        },\n        \"vpcAccess\": {\n          \"connector\": \"<string>\",\n          \"egress\": \"<string>\"\n        },\n        \"timeout\": \"<string>\",\n        \"serviceAccount\": \"<string>\",\n        \"containers\": [\n          {\n            \"name\": \"<string>\",\n            \"image\": \"<string>\",\n            \"command\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"args\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"env\": [\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"in_3e0\": \"<string>\",\n                \"dolorbf3\": \"<string>\"\n              },\n              \"cpuIdle\": \"<boolean>\",\n              \"startupCpuBoost\": \"<boolean>\"\n            },\n            \"ports\": [\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              }\n            ]\n          },\n          {\n            \"name\": \"<string>\",\n            \"image\": \"<string>\",\n            \"command\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"args\": [\n              \"<string>\",\n              \"<string>\"\n            ],\n            \"env\": [\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"value\": \"<string>\"\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"nisi_4\": \"<string>\",\n                \"in_\": \"<string>\"\n              },\n              \"cpuIdle\": \"<boolean>\",\n              \"startupCpuBoost\": \"<boolean>\"\n            },\n            \"ports\": [\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"containerPort\": \"<integer>\"\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              },\n              {\n                \"name\": \"<string>\",\n                \"mountPath\": \"<string>\"\n              }\n            ]\n          }\n        ],\n        \"volumes\": [\n          {\n            \"name\": \"<string>\",\n            \"secret\": {\n              \"secret\": \"<string>\",\n              \"items\": [\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                },\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                }\n              ]\n            }\n          },\n          {\n            \"name\": \"<string>\",\n            \"secret\": {\n              \"secret\": \"<string>\",\n              \"items\": [\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                },\n                {\n                  \"path\": \"<string>\",\n                  \"version\": \"<string>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"maxInstanceRequestConcurrency\": \"<integer>\",\n        \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN1\"\n      },\n      \"traffic\": [\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n          \"revision\": \"<string>\",\n          \"percent\": \"<integer>\",\n          \"tag\": \"<string>\"\n        },\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"<string>\",\n          \"percent\": \"<integer>\",\n          \"tag\": \"<string>\"\n        }\n      ],\n      \"uri\": \"<string>\",\n      \"reconciling\": \"<boolean>\",\n      \"conditions\": [\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\",\n          \"lastTransitionTime\": \"<dateTime>\",\n          \"severity\": \"<string>\"\n        },\n        {\n          \"type\": \"<string>\",\n          \"state\": \"<string>\",\n          \"message\": \"<string>\",\n          \"lastTransitionTime\": \"<dateTime>\",\n          \"severity\": \"<string>\"\n        }\n      ],\n      \"latestReadyRevision\": \"<string>\",\n      \"latestCreatedRevision\": \"<string>\"\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:48:14.000Z",
+                              "updatedAt": "2026-07-28T01:48:14.000Z",
+                              "uid": "35240-d949f555-0754-4080-b233-bc4c0cefd250"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:14.000Z",
+                          "updatedAt": "2026-07-28T01:48:14.000Z",
+                          "uid": "35240-0e3eac02-bc1d-497d-b3dd-90029697740b"
+                        },
+                        {
+                          "name": "Google Cloud Run Create a service",
+                          "id": "bba5e337-3a31-414e-a19d-22bb43439234",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"reprehenderit_6f\": \"<string>\"\n  },\n  \"annotations\": {\n    \"sint4b\": \"<string>\",\n    \"Duis_a1\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"INGRESS_TRAFFIC_ALL\",\n  \"launchStage\": \"DEPRECATED\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"proident_8d\": \"<string>\",\n      \"eiusmod332\": \"<string>\"\n    },\n    \"annotations\": {\n      \"eiusmod_c\": \"<string>\",\n      \"reprehenderit_\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"irure_df\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"elit7f\": \"<string>\",\n            \"quis_8ac\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services?serviceId=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":projectId",
+                                "locations",
+                                ":location",
+                                "services"
+                              ],
+                              "query": [
+                                {
+                                  "description": "(Required) ",
+                                  "key": "serviceId",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "54510db1-8075-4c8d-9357-19f9a7941d39",
+                                  "key": "projectId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "8e4a9bae-35bc-43c5-9a0d-6ad6c9dead28",
+                                  "key": "location",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new service in the given project and location."
+                          },
+                          "response": [
+                            {
+                              "id": "547f7dd7-2871-4990-961f-cbb3c9db2e3b",
+                              "name": "Successful response with long-running operation",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"reprehenderit_6f\": \"<string>\"\n  },\n  \"annotations\": {\n    \"sint4b\": \"<string>\",\n    \"Duis_a1\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"INGRESS_TRAFFIC_ALL\",\n  \"launchStage\": \"DEPRECATED\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"proident_8d\": \"<string>\",\n      \"eiusmod332\": \"<string>\"\n    },\n    \"annotations\": {\n      \"eiusmod_c\": \"<string>\",\n      \"reprehenderit_\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"irure_df\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"elit7f\": \"<string>\",\n            \"quis_8ac\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:projectId/locations/:location/services?serviceId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":projectId",
+                                    "locations",
+                                    ":location",
+                                    "services"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "(Required) ",
+                                      "key": "serviceId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "projectId"
+                                    },
+                                    {
+                                      "key": "location"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"metadata\": {},\n  \"done\": \"<boolean>\",\n  \"error\": {\n    \"code\": \"<integer>\",\n    \"message\": \"<string>\"\n  },\n  \"response\": {}\n}",
+                              "createdAt": "2026-07-28T01:48:14.000Z",
+                              "updatedAt": "2026-07-28T01:48:14.000Z",
+                              "uid": "35240-547f7dd7-2871-4990-961f-cbb3c9db2e3b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:48:14.000Z",
+                          "updatedAt": "2026-07-28T01:48:14.000Z",
+                          "uid": "35240-bba5e337-3a31-414e-a19d-22bb43439234"
+                        }
+                      ],
+                      "id": "faf51801-9b59-4a43-802b-f0a3a6b3b972",
+                      "createdAt": "2026-07-28T01:48:14.000Z",
+                      "updatedAt": "2026-07-28T01:48:14.000Z",
+                      "uid": "35240-faf51801-9b59-4a43-802b-f0a3a6b3b972"
+                    }
+                  ],
+                  "id": "04cdbc6c-8944-4de1-ae58-55f1a67b6850",
+                  "createdAt": "2026-07-28T01:48:14.000Z",
+                  "updatedAt": "2026-07-28T01:48:14.000Z",
+                  "uid": "35240-04cdbc6c-8944-4de1-ae58-55f1a67b6850"
+                }
+              ],
+              "id": "b9489504-a43f-4e66-bc10-98711df88015",
+              "createdAt": "2026-07-28T01:48:14.000Z",
+              "updatedAt": "2026-07-28T01:48:14.000Z",
+              "uid": "35240-b9489504-a43f-4e66-bc10-98711df88015"
+            }
+          ],
+          "id": "591ebd90-5ce1-4202-bd65-6fb1fbb0bac0",
+          "createdAt": "2026-07-28T01:48:14.000Z",
+          "updatedAt": "2026-07-28T01:48:14.000Z",
+          "uid": "35240-591ebd90-5ce1-4202-bd65-6fb1fbb0bac0"
+        }
+      ],
+      "id": "f1fc4ad3-40d0-40c0-8a8b-ac9a3e52686a",
+      "createdAt": "2026-07-28T01:48:14.000Z",
+      "updatedAt": "2026-07-28T01:48:14.000Z",
+      "uid": "35240-f1fc4ad3-40d0-40c0-8a8b-ac9a3e52686a"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/run",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://run.googleapis.com/v2"
+    }
+  ]
+}
