@@ -1,0 +1,775 @@
+{
+  "item": [
+    {
+      "id": "bb14238e-b029-4258-ac98-c04f60e90040",
+      "name": "Projects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dccc0bef-155e-4584-8f37-03fc58a71fec",
+          "name": "Google Cloud Run List services",
+          "request": {
+            "name": "Google Cloud Run List services",
+            "description": {
+              "content": "Lists services in the given project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "showDeleted",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00dcc958-ad2d-43be-907c-562dc7f9266d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "showDeleted",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"services\": [\n    {\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"uid\": \"string\",\n      \"generation\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"createTime\": \"1980-12-07T09:44:50.531Z\",\n      \"updateTime\": \"1984-01-08T06:15:21.527Z\",\n      \"deleteTime\": \"1964-09-10T18:19:42.351Z\",\n      \"expireTime\": \"1962-12-19T15:12:50.706Z\",\n      \"creator\": \"string\",\n      \"lastModifier\": \"string\",\n      \"ingress\": \"INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER\",\n      \"launchStage\": \"UNIMPLEMENTED\",\n      \"template\": {\n        \"revision\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\"\n        },\n        \"scaling\": {\n          \"minInstanceCount\": 6308,\n          \"maxInstanceCount\": 736\n        },\n        \"vpcAccess\": {\n          \"connector\": \"string\",\n          \"egress\": \"string\"\n        },\n        \"timeout\": \"string\",\n        \"serviceAccount\": \"string\",\n        \"containers\": [\n          {\n            \"name\": \"string\",\n            \"image\": \"string\",\n            \"command\": [\n              \"string\",\n              \"string\"\n            ],\n            \"args\": [\n              \"string\",\n              \"string\"\n            ],\n            \"env\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_2\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"cpuIdle\": true,\n              \"startupCpuBoost\": true\n            },\n            \"ports\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          },\n          {\n            \"name\": \"string\",\n            \"image\": \"string\",\n            \"command\": [\n              \"string\",\n              \"string\"\n            ],\n            \"args\": [\n              \"string\",\n              \"string\"\n            ],\n            \"env\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_2\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"cpuIdle\": false,\n              \"startupCpuBoost\": false\n            },\n            \"ports\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        ],\n        \"volumes\": [\n          {\n            \"name\": \"string\",\n            \"secret\": {\n              \"secret\": \"string\",\n              \"items\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          },\n          {\n            \"name\": \"string\",\n            \"secret\": {\n              \"secret\": \"string\",\n              \"items\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"maxInstanceRequestConcurrency\": 5171,\n        \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n      },\n      \"traffic\": [\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"string\",\n          \"percent\": 6176,\n          \"tag\": \"string\"\n        },\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n          \"revision\": \"string\",\n          \"percent\": 4561,\n          \"tag\": \"string\"\n        }\n      ],\n      \"uri\": \"string\",\n      \"reconciling\": true,\n      \"conditions\": [\n        {\n          \"type\": \"string\",\n          \"state\": \"string\",\n          \"message\": \"string\",\n          \"lastTransitionTime\": \"1993-05-28T02:01:27.573Z\",\n          \"severity\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"state\": \"string\",\n          \"message\": \"string\",\n          \"lastTransitionTime\": \"1973-02-15T23:27:25.590Z\",\n          \"severity\": \"string\"\n        }\n      ],\n      \"latestReadyRevision\": \"string\",\n      \"latestCreatedRevision\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"uid\": \"string\",\n      \"generation\": \"string\",\n      \"labels\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"annotations\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"createTime\": \"1982-03-06T13:43:22.076Z\",\n      \"updateTime\": \"1977-06-05T03:26:39.631Z\",\n      \"deleteTime\": \"1981-04-17T00:06:38.593Z\",\n      \"expireTime\": \"1980-10-03T04:52:06.816Z\",\n      \"creator\": \"string\",\n      \"lastModifier\": \"string\",\n      \"ingress\": \"INGRESS_TRAFFIC_UNSPECIFIED\",\n      \"launchStage\": \"ALPHA\",\n      \"template\": {\n        \"revision\": \"string\",\n        \"labels\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\"\n        },\n        \"annotations\": {\n          \"key_0\": \"string\",\n          \"key_1\": \"string\",\n          \"key_2\": \"string\",\n          \"key_3\": \"string\"\n        },\n        \"scaling\": {\n          \"minInstanceCount\": 5881,\n          \"maxInstanceCount\": 1958\n        },\n        \"vpcAccess\": {\n          \"connector\": \"string\",\n          \"egress\": \"string\"\n        },\n        \"timeout\": \"string\",\n        \"serviceAccount\": \"string\",\n        \"containers\": [\n          {\n            \"name\": \"string\",\n            \"image\": \"string\",\n            \"command\": [\n              \"string\",\n              \"string\"\n            ],\n            \"args\": [\n              \"string\",\n              \"string\"\n            ],\n            \"env\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"cpuIdle\": true,\n              \"startupCpuBoost\": false\n            },\n            \"ports\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          },\n          {\n            \"name\": \"string\",\n            \"image\": \"string\",\n            \"command\": [\n              \"string\",\n              \"string\"\n            ],\n            \"args\": [\n              \"string\",\n              \"string\"\n            ],\n            \"env\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"value\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"resources\": {\n              \"limits\": {\n                \"key_0\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"key_1\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              \"cpuIdle\": false,\n              \"startupCpuBoost\": true\n            },\n            \"ports\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"containerPort\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ],\n            \"volumeMounts\": [\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              },\n              {\n                \"name\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                \"mountPath\": {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              }\n            ]\n          }\n        ],\n        \"volumes\": [\n          {\n            \"name\": \"string\",\n            \"secret\": {\n              \"secret\": \"string\",\n              \"items\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          },\n          {\n            \"name\": \"string\",\n            \"secret\": {\n              \"secret\": \"string\",\n              \"items\": [\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                },\n                {\n                  \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                }\n              ]\n            }\n          }\n        ],\n        \"maxInstanceRequestConcurrency\": 8283,\n        \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN1\"\n      },\n      \"traffic\": [\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"string\",\n          \"percent\": 8927,\n          \"tag\": \"string\"\n        },\n        {\n          \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n          \"revision\": \"string\",\n          \"percent\": 9122,\n          \"tag\": \"string\"\n        }\n      ],\n      \"uri\": \"string\",\n      \"reconciling\": true,\n      \"conditions\": [\n        {\n          \"type\": \"string\",\n          \"state\": \"string\",\n          \"message\": \"string\",\n          \"lastTransitionTime\": \"1988-04-03T15:15:04.497Z\",\n          \"severity\": \"string\"\n        },\n        {\n          \"type\": \"string\",\n          \"state\": \"string\",\n          \"message\": \"string\",\n          \"lastTransitionTime\": \"1983-02-11T22:52:11.291Z\",\n          \"severity\": \"string\"\n        }\n      ],\n      \"latestReadyRevision\": \"string\",\n      \"latestCreatedRevision\": \"string\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6549cac-a1f0-490a-99d3-4aaec22b183e",
+          "name": "Google Cloud Run Create a service",
+          "request": {
+            "name": "Google Cloud Run Create a service",
+            "description": {
+              "content": "Creates a new service in the given project and location.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "services"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "serviceId",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"annotations\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"<string>\",\n  \"launchStage\": \"<string>\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"<string>\",\n            \"key_1\": \"<string>\",\n            \"key_2\": \"<string>\",\n            \"key_3\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"<string>\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b220d5a-cfb0-4611-ba86-1cde9aa7c682",
+              "name": "Successful response with long-running operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "services"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "serviceId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"annotations\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"<string>\",\n  \"launchStage\": \"<string>\",\n  \"template\": {\n    \"revision\": \"string\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": 7918,\n      \"maxInstanceCount\": 2333\n    },\n    \"vpcAccess\": {\n      \"connector\": \"string\",\n      \"egress\": \"string\"\n    },\n    \"timeout\": \"string\",\n    \"serviceAccount\": \"string\",\n    \"containers\": [\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": false\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 9712\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 5850\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": true\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 7320\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 4397\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": 3557,\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_UNSPECIFIED\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"metadata\": {},\n  \"done\": false,\n  \"error\": {\n    \"code\": 3704,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "01ab57cd-e8d3-49ff-9dcf-da8e26fac92c",
+          "name": "Google Cloud Run Get a service",
+          "request": {
+            "name": "Google Cloud Run Get a service",
+            "description": {
+              "content": "Gets information about a service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "services",
+                ":serviceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bb015442-92a5-41d4-aeec-11ab0af3ffd9",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "services",
+                    ":serviceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"description\": \"string\",\n  \"uid\": \"string\",\n  \"generation\": \"string\",\n  \"labels\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"annotations\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"createTime\": \"1955-02-13T17:45:34.785Z\",\n  \"updateTime\": \"1978-07-08T19:07:36.731Z\",\n  \"deleteTime\": \"1950-11-04T15:42:06.515Z\",\n  \"expireTime\": \"1962-01-19T06:40:37.959Z\",\n  \"creator\": \"string\",\n  \"lastModifier\": \"string\",\n  \"ingress\": \"INGRESS_TRAFFIC_INTERNAL_ONLY\",\n  \"launchStage\": \"EARLY_ACCESS\",\n  \"template\": {\n    \"revision\": \"string\",\n    \"labels\": {\n      \"key_0\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": 732,\n      \"maxInstanceCount\": 3440\n    },\n    \"vpcAccess\": {\n      \"connector\": \"string\",\n      \"egress\": \"string\"\n    },\n    \"timeout\": \"string\",\n    \"serviceAccount\": \"string\",\n    \"containers\": [\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": false\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 1195\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 1608\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": false\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 6255\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 7137\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": 4929,\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_GEN2\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED\",\n      \"revision\": \"string\",\n      \"percent\": 318,\n      \"tag\": \"string\"\n    },\n    {\n      \"type\": \"TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION\",\n      \"revision\": \"string\",\n      \"percent\": 3256,\n      \"tag\": \"string\"\n    }\n  ],\n  \"uri\": \"string\",\n  \"reconciling\": true,\n  \"conditions\": [\n    {\n      \"type\": \"string\",\n      \"state\": \"string\",\n      \"message\": \"string\",\n      \"lastTransitionTime\": \"1974-06-28T23:01:07.569Z\",\n      \"severity\": \"string\"\n    },\n    {\n      \"type\": \"string\",\n      \"state\": \"string\",\n      \"message\": \"string\",\n      \"lastTransitionTime\": \"1956-02-02T17:01:57.852Z\",\n      \"severity\": \"string\"\n    }\n  ],\n  \"latestReadyRevision\": \"string\",\n  \"latestCreatedRevision\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df547ea6-de6b-4e2f-a5c7-d98bc6eba89f",
+          "name": "Google Cloud Run Update a service",
+          "request": {
+            "name": "Google Cloud Run Update a service",
+            "description": {
+              "content": "Updates a service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "services",
+                ":serviceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "updateMask",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  },\n  \"annotations\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"<string>\",\n  \"launchStage\": \"<string>\",\n  \"template\": {\n    \"revision\": \"<string>\",\n    \"labels\": {\n      \"key_0\": \"<string>\"\n    },\n    \"annotations\": {\n      \"key_0\": \"<string>\",\n      \"key_1\": \"<string>\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": \"<integer>\",\n      \"maxInstanceCount\": \"<integer>\"\n    },\n    \"vpcAccess\": {\n      \"connector\": \"<string>\",\n      \"egress\": \"<string>\"\n    },\n    \"timeout\": \"<string>\",\n    \"serviceAccount\": \"<string>\",\n    \"containers\": [\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      },\n      {\n        \"name\": \"<string>\",\n        \"image\": \"<string>\",\n        \"command\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"args\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"<string>\",\n            \"key_1\": \"<string>\",\n            \"key_2\": \"<string>\",\n            \"key_3\": \"<string>\"\n          },\n          \"cpuIdle\": \"<boolean>\",\n          \"startupCpuBoost\": \"<boolean>\"\n        },\n        \"ports\": [\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"containerPort\": \"<integer>\"\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          },\n          {\n            \"name\": \"<string>\",\n            \"mountPath\": \"<string>\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"<string>\",\n        \"secret\": {\n          \"secret\": \"<string>\",\n          \"items\": [\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            },\n            {\n              \"path\": \"<string>\",\n              \"version\": \"<string>\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": \"<integer>\",\n    \"executionEnvironment\": \"<string>\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "366082c5-24a5-49aa-afdc-df7af63cdd2d",
+              "name": "Successful response with long-running operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "services",
+                    ":serviceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "updateMask",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"uid\": \"<string>\",\n  \"generation\": \"<string>\",\n  \"labels\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\"\n  },\n  \"annotations\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\",\n    \"key_2\": \"<string>\",\n    \"key_3\": \"<string>\"\n  },\n  \"createTime\": \"<dateTime>\",\n  \"updateTime\": \"<dateTime>\",\n  \"deleteTime\": \"<dateTime>\",\n  \"expireTime\": \"<dateTime>\",\n  \"creator\": \"<string>\",\n  \"lastModifier\": \"<string>\",\n  \"ingress\": \"<string>\",\n  \"launchStage\": \"<string>\",\n  \"template\": {\n    \"revision\": \"string\",\n    \"labels\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"annotations\": {\n      \"key_0\": \"string\"\n    },\n    \"scaling\": {\n      \"minInstanceCount\": 7918,\n      \"maxInstanceCount\": 2333\n    },\n    \"vpcAccess\": {\n      \"connector\": \"string\",\n      \"egress\": \"string\"\n    },\n    \"timeout\": \"string\",\n    \"serviceAccount\": \"string\",\n    \"containers\": [\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": false\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 9712\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 5850\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      },\n      {\n        \"name\": \"string\",\n        \"image\": \"string\",\n        \"command\": [\n          \"string\",\n          \"string\"\n        ],\n        \"args\": [\n          \"string\",\n          \"string\"\n        ],\n        \"env\": [\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"value\": \"string\"\n          }\n        ],\n        \"resources\": {\n          \"limits\": {\n            \"key_0\": \"string\"\n          },\n          \"cpuIdle\": true,\n          \"startupCpuBoost\": true\n        },\n        \"ports\": [\n          {\n            \"name\": \"string\",\n            \"containerPort\": 7320\n          },\n          {\n            \"name\": \"string\",\n            \"containerPort\": 4397\n          }\n        ],\n        \"volumeMounts\": [\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          },\n          {\n            \"name\": \"string\",\n            \"mountPath\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"volumes\": [\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      },\n      {\n        \"name\": \"string\",\n        \"secret\": {\n          \"secret\": \"string\",\n          \"items\": [\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            },\n            {\n              \"path\": \"string\",\n              \"version\": \"string\"\n            }\n          ]\n        }\n      }\n    ],\n    \"maxInstanceRequestConcurrency\": 3557,\n    \"executionEnvironment\": \"EXECUTION_ENVIRONMENT_UNSPECIFIED\"\n  },\n  \"traffic\": [\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"percent\": \"<integer>\",\n      \"tag\": \"<string>\"\n    }\n  ],\n  \"uri\": \"<string>\",\n  \"reconciling\": \"<boolean>\",\n  \"conditions\": [\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    },\n    {\n      \"type\": \"<string>\",\n      \"state\": \"<string>\",\n      \"message\": \"<string>\",\n      \"lastTransitionTime\": \"<dateTime>\",\n      \"severity\": \"<string>\"\n    }\n  ],\n  \"latestReadyRevision\": \"<string>\",\n  \"latestCreatedRevision\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"metadata\": {},\n  \"done\": false,\n  \"error\": {\n    \"code\": 3704,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1df89611-f1eb-4ccc-9376-3956c8fff123",
+          "name": "Google Cloud Run Delete a service",
+          "request": {
+            "name": "Google Cloud Run Delete a service",
+            "description": {
+              "content": "Deletes a service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":projectId",
+                "locations",
+                ":location",
+                "services",
+                ":serviceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "projectId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "location",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "serviceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e6c2294c-3391-4b05-9be5-0873cd85c90e",
+              "name": "Successful response with long-running operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":projectId",
+                    "locations",
+                    ":location",
+                    "services",
+                    ":serviceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "projectId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "location",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "serviceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"metadata\": {},\n  \"done\": false,\n  \"error\": {\n    \"code\": 3704,\n    \"message\": \"string\"\n  },\n  \"response\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://run.googleapis.com/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/run"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "22d69904-7a66-4a3d-9611-9369367b2662",
+    "name": "Google Cloud Run Admin Jobs Projects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It supports creating, updating, and deleting services, managing revisions and traffic splitting, executing jobs, and configuring domain mappings.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
