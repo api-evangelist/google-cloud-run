@@ -34,6 +34,8 @@ apis:
   humanURL: https://cloud.google.com/run/docs
   baseURL: https://run.googleapis.com
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -52,6 +54,8 @@ apis:
   humanURL: https://cloud.google.com/run/docs
   baseURL: https://run.googleapis.com
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
