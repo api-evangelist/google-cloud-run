@@ -3,6 +3,18 @@ name: Google Cloud Run
 description: >-
   Google Cloud Run is a fully managed serverless platform that enables you to run stateless containers that are
   invocable via HTTP requests. It abstracts away infrastructure management so you can focus on building applications.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
