@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Google Cloud Run Admin Jobs Revisions API
   description: The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It supports creating, updating, and deleting services, managing revisions and traffic splitting, executing jobs, and configuring domain mappings.
@@ -131,6 +131,24 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
     Revision:
       type: object
       properties:
@@ -181,24 +199,6 @@ components:
                 type: string
               message:
                 type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        metadata:
-          type: object
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
     ListRevisionsResponse:
       type: object
       properties:
