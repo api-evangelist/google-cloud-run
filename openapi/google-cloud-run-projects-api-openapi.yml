@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud Run Admin Jobs Projects API
+  title: Google Cloud Run Admin Projects API
   description: The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It supports creating, updating, and deleting services, managing revisions and traffic splitting, executing jobs, and configuring domain mappings.
   version: v2
   contact:
@@ -216,106 +216,6 @@ components:
             $ref: '#/components/schemas/Service'
         nextPageToken:
           type: string
-    Service:
-      type: object
-      properties:
-        name:
-          type: string
-          description: The fully qualified name of the service.
-        description:
-          type: string
-        uid:
-          type: string
-          description: Output only. Server-assigned unique identifier.
-        generation:
-          type: string
-          description: Output only. A number that monotonically increases every time the user modifies the service.
-        labels:
-          type: object
-          additionalProperties:
-            type: string
-        annotations:
-          type: object
-          additionalProperties:
-            type: string
-        createTime:
-          type: string
-          format: date-time
-        updateTime:
-          type: string
-          format: date-time
-        deleteTime:
-          type: string
-          format: date-time
-        expireTime:
-          type: string
-          format: date-time
-        creator:
-          type: string
-        lastModifier:
-          type: string
-        ingress:
-          type: string
-          enum:
-          - INGRESS_TRAFFIC_UNSPECIFIED
-          - INGRESS_TRAFFIC_ALL
-          - INGRESS_TRAFFIC_INTERNAL_ONLY
-          - INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER
-        launchStage:
-          type: string
-          enum:
-          - LAUNCH_STAGE_UNSPECIFIED
-          - UNIMPLEMENTED
-          - PRELAUNCH
-          - EARLY_ACCESS
-          - ALPHA
-          - BETA
-          - GA
-          - DEPRECATED
-        template:
-          $ref: '#/components/schemas/RevisionTemplate'
-        traffic:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-                enum:
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST
-                - TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION
-              revision:
-                type: string
-              percent:
-                type: integer
-              tag:
-                type: string
-        uri:
-          type: string
-          description: Output only. The main URI where the service is serving traffic.
-        reconciling:
-          type: boolean
-        conditions:
-          type: array
-          items:
-            type: object
-            properties:
-              type:
-                type: string
-              state:
-                type: string
-              message:
-                type: string
-              lastTransitionTime:
-                type: string
-                format: date-time
-              severity:
-                type: string
-        latestReadyRevision:
-          type: string
-        latestCreatedRevision:
-          type: string
     RevisionTemplate:
       type: object
       properties:
@@ -431,6 +331,106 @@ components:
           - EXECUTION_ENVIRONMENT_UNSPECIFIED
           - EXECUTION_ENVIRONMENT_GEN1
           - EXECUTION_ENVIRONMENT_GEN2
+    Service:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The fully qualified name of the service.
+        description:
+          type: string
+        uid:
+          type: string
+          description: Output only. Server-assigned unique identifier.
+        generation:
+          type: string
+          description: Output only. A number that monotonically increases every time the user modifies the service.
+        labels:
+          type: object
+          additionalProperties:
+            type: string
+        annotations:
+          type: object
+          additionalProperties:
+            type: string
+        createTime:
+          type: string
+          format: date-time
+        updateTime:
+          type: string
+          format: date-time
+        deleteTime:
+          type: string
+          format: date-time
+        expireTime:
+          type: string
+          format: date-time
+        creator:
+          type: string
+        lastModifier:
+          type: string
+        ingress:
+          type: string
+          enum:
+          - INGRESS_TRAFFIC_UNSPECIFIED
+          - INGRESS_TRAFFIC_ALL
+          - INGRESS_TRAFFIC_INTERNAL_ONLY
+          - INGRESS_TRAFFIC_INTERNAL_LOAD_BALANCER
+        launchStage:
+          type: string
+          enum:
+          - LAUNCH_STAGE_UNSPECIFIED
+          - UNIMPLEMENTED
+          - PRELAUNCH
+          - EARLY_ACCESS
+          - ALPHA
+          - BETA
+          - GA
+          - DEPRECATED
+        template:
+          $ref: '#/components/schemas/RevisionTemplate'
+        traffic:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+                enum:
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_UNSPECIFIED
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_LATEST
+                - TRAFFIC_TARGET_ALLOCATION_TYPE_REVISION
+              revision:
+                type: string
+              percent:
+                type: integer
+              tag:
+                type: string
+        uri:
+          type: string
+          description: Output only. The main URI where the service is serving traffic.
+        reconciling:
+          type: boolean
+        conditions:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              state:
+                type: string
+              message:
+                type: string
+              lastTransitionTime:
+                type: string
+                format: date-time
+              severity:
+                type: string
+        latestReadyRevision:
+          type: string
+        latestCreatedRevision:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

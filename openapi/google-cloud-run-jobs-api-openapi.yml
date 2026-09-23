@@ -267,15 +267,6 @@ components:
               type: string
         response:
           type: object
-    ListJobsResponse:
-      type: object
-      properties:
-        jobs:
-          type: array
-          items:
-            $ref: '#/components/schemas/Job'
-        nextPageToken:
-          type: string
     Job:
       type: object
       properties:
@@ -380,6 +371,15 @@ components:
                 type: string
               message:
                 type: string
+    ListJobsResponse:
+      type: object
+      properties:
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Job'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
