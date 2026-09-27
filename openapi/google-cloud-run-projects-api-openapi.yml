@@ -189,33 +189,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        metadata:
-          type: object
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
-    ListServicesResponse:
-      type: object
-      properties:
-        services:
-          type: array
-          items:
-            $ref: '#/components/schemas/Service'
-        nextPageToken:
-          type: string
     RevisionTemplate:
       type: object
       properties:
@@ -331,6 +304,33 @@ components:
           - EXECUTION_ENVIRONMENT_UNSPECIFIED
           - EXECUTION_ENVIRONMENT_GEN1
           - EXECUTION_ENVIRONMENT_GEN2
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
+    ListServicesResponse:
+      type: object
+      properties:
+        services:
+          type: array
+          items:
+            $ref: '#/components/schemas/Service'
+        nextPageToken:
+          type: string
     Service:
       type: object
       properties:
