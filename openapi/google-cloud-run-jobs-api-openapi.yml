@@ -258,6 +258,24 @@ components:
             $ref: '#/components/schemas/Job'
         nextPageToken:
           type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        metadata:
+          type: object
+        done:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: integer
+            message:
+              type: string
+        response:
+          type: object
     Job:
       type: object
       properties:
@@ -362,24 +380,6 @@ components:
                 type: string
               message:
                 type: string
-    Operation:
-      type: object
-      properties:
-        name:
-          type: string
-        metadata:
-          type: object
-        done:
-          type: boolean
-        error:
-          type: object
-          properties:
-            code:
-              type: integer
-            message:
-              type: string
-        response:
-          type: object
   securitySchemes:
     oauth2:
       type: oauth2
