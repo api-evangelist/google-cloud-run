@@ -131,15 +131,6 @@ paths:
                 $ref: '#/components/schemas/Operation'
 components:
   schemas:
-    ListRevisionsResponse:
-      type: object
-      properties:
-        revisions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Revision'
-        nextPageToken:
-          type: string
     Operation:
       type: object
       properties:
@@ -208,6 +199,15 @@ components:
                 type: string
               message:
                 type: string
+    ListRevisionsResponse:
+      type: object
+      properties:
+        revisions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Revision'
+        nextPageToken:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
