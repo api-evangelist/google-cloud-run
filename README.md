@@ -1,4 +1,4 @@
-# Google Cloud Run (google-cloud-run)
+# Google Cloud Run
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,64 +66,155 @@
 
 Google Cloud Run is a fully managed serverless platform that enables you to run stateless containers that are invocable via HTTP requests. It abstracts away infrastructure management so you can focus on building applications.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-cloud-run/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-cloud-run/refs/heads/main/apis.yml)
+**Areas:** Cloud Run · Containers · Google Cloud · Serverless
 
-## Scope
+## Google Cloud Run on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud Run is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-run/](https://apis.io/providers/google-cloud-run/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- Cloud Run
-- Containers
-- Google Cloud
-- Serverless
+- [Google Cloud Run Jobs API](https://apis.io/apis/google-cloud-run/google-cloud-run-jobs-api/) — Operations for managing Cloud Run jobs
+- [Google Cloud Run Projects API](https://apis.io/apis/google-cloud-run/google-cloud-run-projects-api/) — The Projects API from Google Cloud Run — 2 operation(s) for projects.
+- [Google Cloud Run Revisions API](https://apis.io/apis/google-cloud-run/google-cloud-run-revisions-api/) — Operations for managing service revisions
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud Run Admin API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud Run Admin API deploys and manages user-provided container images as serverless services. It allows you to create, update, and delete services and revisions, manage traffic routing between revisions, and configure domain mappings and IAM policies.
+- [Google Cloud Run Agentic Access](https://apis.io/agentic-access/google-cloud-run/google-cloud-run-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/run/docs](https://cloud.google.com/run/docs)
-- **Base URL:** `https://run.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Containers
-- Serverless
+- [Google Cloud Run Service](https://apis.io/schemas/google-cloud-run/google-cloud-run-service/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/run/docs/reference/rest)
-- [OpenAPI](openapi/google-cloud-run-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/google-cloud-run.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/google-cloud-run.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/run/docs/quickstarts)
-- [JSON Schema](json-schema/google-cloud-run-service-schema.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Google Cloud Run Context](https://apis.io/jsonld/google-cloud-run/google-cloud-run-context/)
 
-- [GitHub Organization](https://github.com/GoogleCloudPlatform)
-- [Portal](https://cloud.google.com/run)
-- [Getting Started](https://cloud.google.com/run/docs/quickstarts)
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud Run Admin API](https://apis.io/collections/google-cloud-run/open-google-cloud-run/)
+- [Google Cloud Run Admin Jobs API](https://apis.io/collections/google-cloud-run/open-google-cloud-run-jobs-api/)
+- [Google Cloud Run Admin Jobs Projects API](https://apis.io/collections/google-cloud-run/open-google-cloud-run-projects-api/)
+- [Google Cloud Run Admin Jobs Revisions API](https://apis.io/collections/google-cloud-run/open-google-cloud-run-revisions-api/)
+- [Google Cloud Run Admin Jobs API](https://apis.io/collections/google-cloud-run/postman-google-cloud-run-jobs-api/)
+- [Google Cloud Run Admin Jobs Projects API](https://apis.io/collections/google-cloud-run/postman-google-cloud-run-projects-api/)
+- [Google Cloud Run Admin Jobs Revisions API](https://apis.io/collections/google-cloud-run/postman-google-cloud-run-revisions-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud Run — jsonschema rules](https://apis.io/rules/google-cloud-run/google-cloud-run-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Run Authentication](https://apis.io/security/google-cloud-run/google-cloud-run-authentication/)
+- [Google Cloud Run Domain Security](https://apis.io/security/google-cloud-run/google-cloud-run-domain-security/)
+- [Google Cloud Run Vulnerability Disclosure](https://apis.io/security/google-cloud-run/google-cloud-run-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Run Scopes](https://apis.io/scopes/google-cloud-run/google-cloud-run-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Run Plans Pricing](https://apis.io/plans/google-cloud-run/google-cloud-run-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Run Rate Limits](https://apis.io/rate-limits/google-cloud-run/google-cloud-run-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Run Finops](https://apis.io/finops/google-cloud-run/google-cloud-run-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/run/docs)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/run/docs/quickstarts)
 - [Pricing](https://cloud.google.com/run/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/run/docs/support)
-- [JSON-LD](json-ld/google-cloud-run-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/GoogleCloudPlatform)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 46.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-run/](https://apis.io/providers/google-cloud-run/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud Run: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-run/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
